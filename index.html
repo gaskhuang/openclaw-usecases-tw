@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awesome OpenClaw 使用案例大全 - 繁體中文版</title>
+<style>
+:root {
+  --bg: #0f172a; --card: #1e293b; --card-h: #263347; --border: #334155;
+  --text: #e2e8f0; --muted: #94a3b8; --primary: #6366f1; --pl: #818cf8;
+  --c1:#f43f5e; --c2:#f59e0b; --c3:#10b981; --c4:#3b82f6;
+  --c5:#a855f7; --c6:#14b8a6; --c7:#ef4444; --c8:#f97316;
+  --c9:#06b6d4; --c10:#84cc16; --c11:#ec4899; --c12:#8b5cf6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.hero{text-align:center;padding:70px 20px 50px;background:linear-gradient(135deg,#1e1b4b 0%,#0f172a 50%,#042f2e 100%);border-bottom:1px solid var(--border)}
+.hero h1{font-size:2.6rem;background:linear-gradient(135deg,#818cf8,#c084fc,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:14px}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:680px;margin:0 auto}
+.stats{margin-top:22px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.stat{background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);border-radius:10px;padding:8px 18px;font-size:.9rem}
+.stat strong{color:var(--pl)}
+.sources{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+.src-tag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:4px 14px;font-size:.78rem;color:var(--muted)}
+.container{max-width:1160px;margin:0 auto;padding:36px 20px 80px}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:44px}
+.toc h3{font-size:1.1rem;margin-bottom:14px;color:var(--pl)}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:7px}
+.toc a{color:var(--muted);text-decoration:none;font-size:.88rem;transition:color .2s}
+.toc a:hover{color:var(--pl)}
+.category{margin-bottom:52px}
+.cat-header{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.cat-icon{font-size:1.7rem}
+.cat-header h2{font-size:1.5rem;font-weight:700}
+.cat-count{background:rgba(99,102,241,.15);color:var(--pl);font-size:.76rem;padding:3px 10px;border-radius:20px;font-weight:600}
+.cat-new{background:rgba(16,185,129,.15);color:#34d399;font-size:.72rem;padding:2px 8px;border-radius:20px;margin-left:4px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .22s ease;position:relative}
+.card:hover{background:var(--card-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.card-new-badge{position:absolute;top:14px;right:14px;background:rgba(16,185,129,.2);color:#34d399;font-size:.68rem;padding:2px 8px;border-radius:10px;font-weight:600}
+.accent{width:36px;height:3px;border-radius:3px;margin-bottom:12px}
+.card-title{font-size:1.08rem;font-weight:700;margin-bottom:3px}
+.card-en{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:10px}
+.card-desc{color:var(--muted);font-size:.88rem;margin-bottom:13px;line-height:1.65}
+.card-how{font-size:.78rem;font-weight:700;color:var(--pl);text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+.card-steps{font-size:.84rem;color:var(--muted);line-height:1.6}
+.tags{margin-top:12px}
+.tag{display:inline-block;font-size:.72rem;padding:2px 9px;border-radius:16px;margin:2px 2px 0 0}
+footer{text-align:center;padding:36px 20px;border-top:1px solid var(--border);color:var(--muted);font-size:.83rem}
+footer a{color:var(--pl);text-decoration:none}
+@media(max-width:600px){.hero h1{font-size:1.7rem}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🐾 Awesome OpenClaw 使用案例大全</h1>
+  <p>融合 7 個社群 GitHub Repo，收錄 118 個經過驗證的 OpenClaw AI 代理框架真實應用案例，涵蓋 12 大分類，重複案例已去除。</p>
+  <div class="stats">
+    <div class="stat">📦 <strong>118</strong> 使用案例</div>
+    <div class="stat">📂 <strong>12</strong> 大分類</div>
+    <div class="stat">🔗 <strong>7</strong> 個來源 Repo</div>
+    <div class="stat">📄 授權：<strong>MIT</strong></div>
+  </div>
+  <div class="sources">
+    <span class="src-tag">hesamsheikh/awesome-openclaw-usecases</span>
+    <span class="src-tag">EvoLinkAI/awesome-openclaw-usecases-moltbook</span>
+    <span class="src-tag">fendouai/awesome-openclaw-usecases-Chinese</span>
+    <span class="src-tag">Ronakkadhi/awesome-openclaw-usecases</span>
+    <span class="src-tag">OthmaneBlial/awesome-openclaw-examples</span>
+    <span class="src-tag">zhulin025/openclaw_usecase_hub</span>
+    <span class="src-tag">webvijayi/awesome-clawdbot-usecases</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <h3>📑 目錄導覽</h3>
+  <div class="toc-grid">
+    <a href="#s1">📱 社群媒體（9 個案例）</a>
+    <a href="#s2">🎨 創意與內容製作（9 個案例）</a>
+    <a href="#s3">🏠 日常生活自動化（10 個案例）★新</a>
+    <a href="#s4">⚡ 生產力工具（26 個案例）</a>
+    <a href="#s5">💼 商業、行銷與銷售（14 個案例）★新</a>
+    <a href="#s6">🔧 DevOps 與工程（10 個案例）</a>
+    <a href="#s7">🛡️ 安全與合規（6 個案例）★新</a>
+    <a href="#s8">🖥️ 監控與維運（8 個案例）★新</a>
+    <a href="#s9">🔬 研究與學習（9 個案例）</a>
+    <a href="#s10">💰 金融與交易（6 個案例）</a>
+    <a href="#s11">🏥 健康與個人成長（6 個案例）★新</a>
+    <a href="#s12">🧠 AI 記憶與代理架構（5 個案例）★新</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 1：社群媒體
+══════════════════════════════════════════ -->
+<div class="category" id="s1">
+  <div class="cat-header">
+    <span class="cat-icon">📱</span>
+    <h2>社群媒體</h2>
+    <span class="cat-count">9 個案例</span>
+    <span class="cat-new">+5 新增</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-title">📰 每日 Reddit 摘要</div>
+      <div class="card-en">Daily Reddit Digest</div>
+      <div class="card-desc">根據個人偏好，自動整理並摘要喜愛的 subreddit 內容，每日產出精選報告。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定感興趣的 subreddit 與關鍵字偏好 → 配置每日排程 → 代理抓取、過濾並摘要 → 透過 Email/Telegram 推送</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">Reddit API</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">排程任務</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-title">🎬 每日 YouTube 摘要</div>
+      <div class="card-en">Daily YouTube Digest</div>
+      <div class="card-desc">每天自動摘要追蹤頻道的新影片，不錯過任何喜愛創作者的內容。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">輸入追蹤頻道清單 → 代理每日檢查新影片並擷取字幕 → 生成簡短摘要 → 以訊息推送</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">YouTube API</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">字幕擷取</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-title">🐦 X 帳號質性分析</div>
+      <div class="card-en">X Account Analysis</div>
+      <div class="card-desc">對 X（Twitter）帳號進行質性分析，包含互動率、內容趨勢與受眾洞察。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供帳號名稱 → 代理抓取貼文與互動數據 → AI 分析最佳發文時間與受眾偏好 → 產出改善建議報告</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">X API</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">數據分析</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-title">📡 多來源科技新聞摘要</div>
+      <div class="card-en">Multi-Source Tech News Digest</div>
+      <div class="card-desc">從 109+ 個來源（RSS、X、GitHub、網路搜尋）彙整科技新聞，品質評分排序後推送。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定關注的科技領域 → 代理從多來源自動抓取並去重 → 品質評分排序 → 自然語言方式傳送精選摘要</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">109+ 來源</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">品質評分</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔔 品牌社群監控</div>
+      <div class="card-en">Social Media Brand Monitor</div>
+      <div class="card-desc">跨平台即時追蹤品牌提及、關鍵字聲量與競品動態，異常時立即通知。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定監控關鍵字與平台範圍 → 代理持續掃描各平台 → 偵測到提及即彙整情緒分析 → 達到閾值時發出警報</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">聲量監控</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">情緒分析</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📅 自動排程社群發文</div>
+      <div class="card-en">Auto Social Media Posting</div>
+      <div class="card-desc">將準備好的內容自動依最佳時機排程，發布至多個社群平台。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供內容草稿與目標平台 → 代理分析各平台最佳發文時段 → 自動排程並於指定時間發布 → 回報觸及與互動數據</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">多平台</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">排程發文</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📸 Instagram 限時動態管理</div>
+      <div class="card-en">Instagram Story Manager</div>
+      <div class="card-desc">自動生成並發布 Instagram 限時動態，保持帳號活躍度而無需手動操作。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定品牌風格與內容主題 → 代理自動產出限時動態素材 → 依排程自動發布 → 追蹤觀看與互動數據</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">Instagram</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">自動內容</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🎯 Reddit 產品聲量追蹤</div>
+      <div class="card-en">Reddit Pulse</div>
+      <div class="card-desc">在 Reddit 上持續追蹤產品或品牌的提及，自動分類後草擬回覆建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定產品名稱與相關關鍵字 → 代理掃描相關 subreddit 的提及 → 分類為正評、負評、提問 → 草擬回覆並通知</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">Reddit</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">產品監聽</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c1)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💬 X 互動管理助手</div>
+      <div class="card-en">X Engagement Manager</div>
+      <div class="card-desc">自動處理 X 上的提及、回覆草稿與關鍵對話追蹤，提升社群互動效率。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 X 帳號 → 代理監控提及與 DM → 對常見問題自動草擬回覆 → 重要互動優先通知人工處理</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">X API</span>
+        <span class="tag" style="background:rgba(244,63,94,.12);color:#fb7185;border:1px solid rgba(244,63,94,.2)">互動管理</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 2：創意與內容製作
+══════════════════════════════════════════ -->
+<div class="category" id="s2">
+  <div class="cat-header">
+    <span class="cat-icon">🎨</span>
+    <h2>創意與內容製作</h2>
+    <span class="cat-count">9 個案例</span>
+    <span class="cat-new">+4 新增</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-title">🎯 目標驅動自主任務</div>
+      <div class="card-en">Goal-Driven Autonomous Tasks</div>
+      <div class="card-desc">把目標隨意寫下，代理自動拆解為每日任務並排程執行，甚至夜間打造驚喜小應用。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">以自然語言描述目標 → 代理拆解為每日可執行任務 → 自動排程執行 → 回報成果（含可能生成的小應用）</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">自主排程</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">目標拆解</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-title">🎥 YouTube 內容產線</div>
+      <div class="card-en">YouTube Content Pipeline</div>
+      <div class="card-desc">自動化 YouTube 頻道的影片靈感發掘、主題研究與進度追蹤。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定頻道主題方向 → 代理自動搜尋熱門話題與競品分析 → 產出靈感清單含大綱 → 追蹤每支影片進度</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">靈感發掘</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">進度追蹤</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-title">🏭 多代理內容工廠</div>
+      <div class="card-en">Multi-Agent Content Factory</div>
+      <div class="card-desc">在 Discord 中運行多代理內容產線 — 研究、寫作與縮圖代理分別在專屬頻道中協作。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">在 Discord 建立專屬頻道 → 研究代理蒐集素材 → 寫作代理產出文案 → 縮圖代理製作封面</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">Discord</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">多代理協作</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-title">🎮 自主遊戲開發流水線</div>
+      <div class="card-en">Autonomous Game Dev Pipeline</div>
+      <div class="card-desc">全生命週期管理教育類遊戲開發：從需求選取、程式實現到文件撰寫與 Git commit，全部自動化。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">在 backlog 定義功能需求 → 代理選取優先任務並開發 → 自動產生文件並執行 Git 操作 → 全程無需人工介入</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">遊戲開發</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">Git 整合</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-title">🎙️ Podcast 製作流水線</div>
+      <div class="card-en">Podcast Production Pipeline</div>
+      <div class="card-desc">自動化完整 Podcast 工作流 — 來賓研究、節目大綱、節目筆記到社群宣傳。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">輸入節目主題或來賓名單 → 代理研究背景並產出訪談問題 → 錄製後自動生成 show notes → 自動排程社群宣傳文案</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">Podcast</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">來賓研究</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🎧 電子報轉 Podcast</div>
+      <div class="card-en">Email Newsletter to Podcast</div>
+      <div class="card-desc">將電子郵件電子報自動轉換為音頻內容，方便通勤時收聽。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">授權代理讀取電子報信件 → 代理擷取重點內容並生成腳本 → 轉換為 TTS 音頻 → 推送至 Podcast 平台或直接收聽</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">TTS</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">電子報</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">✍️ AI 寫作助手</div>
+      <div class="card-en">Writing Assistant</div>
+      <div class="card-desc">協助起草、修改、潤色各類文章，從部落格到商業報告，風格可自訂。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供主題與目標受眾 → 代理產出初稿或改善現有內容 → 指定語調與風格後迭代修改 → 輸出最終版本</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">寫作</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">風格客製</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔁 一文多平台內容複製</div>
+      <div class="card-en">Content Multiplication</div>
+      <div class="card-desc">將一篇核心內容自動改寫為適合 7 個不同平台的格式（Twitter 串、LinkedIn 文、IG Caption 等）。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供核心文章或想法 → 代理依各平台格式與字數限制自動改寫 → 產出各平台版本 → 可直接排程發布</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">跨平台</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">內容再利用</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c2)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🎓 學術研究助手</div>
+      <div class="card-en">Academic Research Helper</div>
+      <div class="card-desc">協助搜集文獻、整理引用、彙整研究摘要，加速學術論文撰寫流程。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">輸入研究主題與問題 → 代理搜尋相關論文並摘要重點 → 整理引用格式（APA/MLA 等）→ 產出文獻綜述草稿</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">文獻搜集</span>
+        <span class="tag" style="background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)">引用管理</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 3：日常生活自動化（全新分類）
+══════════════════════════════════════════ -->
+<div class="category" id="s3">
+  <div class="cat-header">
+    <span class="cat-icon">🏠</span>
+    <h2>日常生活自動化</h2>
+    <span class="cat-count">10 個案例</span>
+    <span class="cat-new">★ 全新分類</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🏠 Telegram 智慧家居控制</div>
+      <div class="card-en">Smart Home via Telegram</div>
+      <div class="card-desc">透過 Telegram 訊息控制家庭自動化設備，無需專屬 App，語音或文字指令皆可。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">將家居自動化平台（如 Home Assistant）與代理串接 → 在 Telegram 輸入指令（「開燈」、「查溫度」）→ 代理執行並回報狀態</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">Telegram</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">Home Assistant</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">✈️ 旅遊行程規劃</div>
+      <div class="card-en">Travel Itinerary Planner</div>
+      <div class="card-desc">根據目的地、天數與預算，自動生成詳細的旅遊行程，包含景點、交通與餐廳建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">輸入目的地、日期與偏好（文化/美食/冒險）→ 代理查詢景點、開放時間與交通方式 → 產出完整行程表 → 可匯出為 PDF 或加入行事曆</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">旅遊規劃</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">行程生成</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🛒 跨平台比價購物</div>
+      <div class="card-en">Price Comparison Shopper</div>
+      <div class="card-desc">自動比較指定商品在各電商平台的價格，低於目標價時立即通知。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">輸入想購買的商品與目標價格 → 代理定期掃描各平台價格 → 比較並記錄歷史價格趨勢 → 達到目標價時發送通知</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">價格追蹤</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">比價</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">👗 天氣穿搭建議</div>
+      <div class="card-en">Weather Outfit Advisor</div>
+      <div class="card-desc">每天早上根據當日天氣狀況，自動推薦適合的穿著，考量溫度、降雨與活動類型。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定所在城市與衣物偏好 → 代理每日抓取天氣預報 → 根據氣溫與活動推薦穿搭 → 以早晨通知方式推送</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">天氣 API</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">每日提醒</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🎂 生日祝福自動發送</div>
+      <div class="card-en">Birthday Wish Auto-Sender</div>
+      <div class="card-desc">自動記住聯絡人生日，在當天自動發送個人化的生日祝福訊息。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">匯入聯絡人生日清單 → 代理每日檢查是否有人生日 → 根據關係親疏生成個人化祝福語 → 透過 Email 或 LINE/WhatsApp 發送</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">自動提醒</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">個人化訊息</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📅 自動預訂代理</div>
+      <div class="card-en">Booking & Appointment Agent</div>
+      <div class="card-desc">自主完成餐廳訂位、服務預約等日常預訂任務，省去繁瑣的電話或表單填寫。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">描述預訂需求（餐廳、日期、人數）→ 代理搜尋可用選項並確認條件 → 自動完成線上預訂流程 → 將確認資訊加入行事曆</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">自動預訂</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">行事曆整合</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📚 閱讀清單智慧管理</div>
+      <div class="card-en">Reading List Curator</div>
+      <div class="card-desc">智慧管理排隊閱讀的文章，依優先序排列並在空閒時自動推送最適合的內容。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">將想讀的連結加入清單 → 代理分析內容與閱讀時間 → 依主題與優先序排列 → 在設定的時間推送今日推薦閱讀</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">閱讀管理</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">智慧排序</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🍳 食譜推薦與購物清單</div>
+      <div class="card-en">Recipe Recommendation</div>
+      <div class="card-desc">根據冰箱現有食材推薦食譜，並自動生成購買缺少食材的購物清單。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">輸入目前有的食材或飲食限制 → 代理推薦適合食譜 → 列出缺少的食材清單 → 可直接同步至購物清單 App</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">食譜</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">購物清單</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📖 耐心作業輔導老師</div>
+      <div class="card-en">Homework Tutor</div>
+      <div class="card-desc">以對話方式協助學生理解作業題目，引導思考而非直接給答案，適合各年齡層。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">學生上傳或描述作業題目 → 代理識別科目與難度 → 以蘇格拉底式引導法逐步解題 → 提供相關練習題鞏固理解</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">教育</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">引導式學習</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c3)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📓 每日學習日誌</div>
+      <div class="card-en">Daily Learning Journal</div>
+      <div class="card-desc">每天自動記錄與追蹤學習進度，生成週報幫助反思與調整學習計畫。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">每天記錄學了什麼（可用語音或文字）→ 代理結構化整理並分類 → 每週生成學習進度報告 → 提供下週學習建議</div>
+      <div class="tags">
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">學習追蹤</span>
+        <span class="tag" style="background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)">週報</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CATEGORY 4：生產力工具
+══════════════════════════════════════════ -->
+<div class="category" id="s4">
+  <div class="cat-header">
+    <span class="cat-icon">⚡</span>
+    <h2>生產力工具</h2>
+    <span class="cat-count">26 個案例</span>
+    <span class="cat-new">+9 新增</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">📋 自主專案管理</div>
+      <div class="card-en">Autonomous Project Management</div>
+      <div class="card-desc">使用 STATE.yaml 模式協調多代理專案，子代理平行工作，無需主控代理的額外開銷。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">建立 STATE.yaml 定義專案狀態 → 多子代理各自負責模組 → 透過共享狀態檔協調 → 平行執行後自動更新狀態</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">STATE.yaml</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">多代理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">💬 多通道 AI 客服</div>
+      <div class="card-en">Multi-Channel AI Customer Service</div>
+      <div class="card-desc">統一 WhatsApp、Instagram、Email 和 Google 評論到一個 AI 驅動的收件匣，24/7 自動回覆。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接各通道帳號 → 設定回覆範本與品牌語調 → 代理自動接收分類並處理 → 複雜問題標記轉交人工</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">WhatsApp</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">24/7</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">📞 電話語音個人助理</div>
+      <div class="card-en">Phone-Based Personal Assistant</div>
+      <div class="card-desc">透過電話通話存取 AI 代理，在任何電話上實現免持語音助理功能。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">配置語音通話服務（如 Twilio）→ 撥打指定號碼啟動語音助理 → 透過語音下達指令 → 代理語音回覆執行結果</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Twilio</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">語音助理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">📧 收件匣清理器</div>
+      <div class="card-en">Inbox De-clutter</div>
+      <div class="card-desc">自動摘要電子報內容，將精選摘要以 Email 方式寄送，告別雜亂收件匣。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">授權代理存取 Email → 設定哪些電子報需要摘要 → 代理自動辨識提取關鍵內容 → 每日或每週寄送精選摘要</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Email</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">電子報摘要</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">👥 個人 CRM</div>
+      <div class="card-en">Personal CRM</div>
+      <div class="card-desc">從 Email 和行事曆中自動發掘並追蹤聯絡人，支援自然語言查詢互動歷史。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 Email 與行事曆 → 代理掃描往來信件建立聯絡人資料庫 → 以自然語言查詢（「上次跟 John 見面？」）→ 自動提醒跟進</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">CRM</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">自然語言查詢</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">🏥 健康與症狀追蹤器</div>
+      <div class="card-en">Health &amp; Symptom Tracker</div>
+      <div class="card-desc">記錄飲食攝入與身體症狀，透過 AI 識別可能的觸發因素，定期提醒回報。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">透過聊天記錄飲食與症狀 → 代理設定排程提醒 → AI 分析飲食與症狀關聯 → 產出週報顯示健康模式</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">健康追蹤</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">觸發因素</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">🔀 多通道個人助理</div>
+      <div class="card-en">Multi-Channel Personal Assistant</div>
+      <div class="card-desc">從單一 AI 助理跨 Telegram、Slack、Email 與行事曆路由任務，統一工作流。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">整合各通道帳號 → 在任何平台下達指令 → 代理判斷應在哪個平台執行 → 結果統一回報到發起通道</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Telegram</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Slack</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">📊 事件驅動專案狀態管理</div>
+      <div class="card-en">Project State Management</div>
+      <div class="card-desc">事件驅動的專案追蹤，自動捕獲上下文，取代傳統靜態看板系統。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">定義觸發事件規則（commit、PR、部署）→ 代理自動監聽並更新狀態 → 每次變更自動記錄上下文 → 比看板更即時的進度檢視</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">事件驅動</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">取代看板</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">📈 動態即時儀表板</div>
+      <div class="card-en">Dynamic Dashboard</div>
+      <div class="card-desc">即時儀表板，可從 API、資料庫與社群媒體平行擷取多來源資料，隨時反映最新狀態。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定追蹤的數據來源 → 代理平行同時擷取最新資料 → 自動彙整呈現儀表板 → 支援即時更新</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">即時資料</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">平行擷取</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">✅ Todoist 透明任務管理</div>
+      <div class="card-en">Todoist Task Manager</div>
+      <div class="card-desc">將代理推理過程與進度日誌同步到 Todoist，讓代理執行過程完全透明可見。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 Todoist 帳號 → 代理執行時將推理步驟寫入 Todoist → 即時查看代理在做什麼 → 完成任務自動勾選</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Todoist</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">推理日誌</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">👨‍👩‍👧‍👦 家庭行事曆與家務助理</div>
+      <div class="card-en">Family Calendar &amp; Household Assistant</div>
+      <div class="card-desc">彙整全家人的行事曆產出晨間簡報，監控預約資訊，並管理家庭庫存。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接所有家庭成員行事曆 → 每天早上自動產出全家行程簡報 → 監控群組訊息中的預約並加入行事曆 → 追蹤家庭庫存並提醒補貨</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">家庭行事曆</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">庫存管理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">🤝 多代理專業團隊</div>
+      <div class="card-en">Multi-Agent Specialized Team</div>
+      <div class="card-desc">在單一 Telegram 聊天室運行多個專業代理（策略、開發、行銷、商務），如同一個協調的團隊。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">在 Telegram 建立群組並添加各專業代理 → 提出問題時相關代理從專業角度回應 → 代理間互相協調產出跨領域建議</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Telegram</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">專業分工</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">🌅 客製化晨間簡報</div>
+      <div class="card-en">Custom Morning Brief</div>
+      <div class="card-desc">每天早上以簡訊推送完全客製化的每日簡報，包含新聞、任務、內容草稿與 AI 建議行動。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定想看的內容類型與偏好 → 代理每天早上自動蒐集整理 → 生成個人化簡報 → 以 SMS 於設定時間推送</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">SMS</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">個人化</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">📝 自動會議紀錄與行動項目</div>
+      <div class="card-en">Automated Meeting Notes &amp; Action Items</div>
+      <div class="card-desc">將會議逐字稿轉換為結構化摘要，自動在 Jira、Linear 或 Todoist 中建立任務並指派。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">上傳或串接逐字稿來源 → 代理解析並提取決議與行動項目 → 識別負責人並在專案工具自動建立任務 → 產出結構化會議摘要</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">會議紀錄</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Jira/Linear</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">🏆 習慣追蹤與問責教練</div>
+      <div class="card-en">Habit Tracker &amp; Accountability Coach</div>
+      <div class="card-desc">透過 Telegram 或 SMS 主動每日打卡提醒，追蹤習慣連續天數，根據進度自適應語調。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定習慣清單與每日目標 → 代理在設定時間主動提醒 → 回覆完成狀況後記錄連續天數 → 根據表現自動調整語調</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">習慣養成</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">連續天數</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">🧠 第二大腦</div>
+      <div class="card-en">Second Brain</div>
+      <div class="card-desc">隨時傳訊息給機器人來記住任何事情，在客製化 Next.js 儀表板中搜尋所有記憶。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">透過聊天隨時傳送想記住的資訊 → 代理自動分類標記並儲存 → 使用 Next.js 搜尋介面查找記憶 → 支援語義搜尋</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Next.js</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">記憶搜尋</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-title">📞 活動賓客電話確認</div>
+      <div class="card-en">Event Guest Confirmation</div>
+      <div class="card-desc">自動逐一致電活動賓客確認出席，記錄筆記並彙整摘要，完全由 AI 語音電話自動化。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">上傳賓客名單與通話腳本 → 代理自動逐一撥打電話 → AI 語音進行確認對話 → 彙整所有回覆產出確認報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">AI 語音通話</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">批次撥號</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📂 郵件自動分類器</div>
+      <div class="card-en">Email Auto-Sorter</div>
+      <div class="card-desc">依照緊急程度、寄件人類型與主題，自動對收件匣郵件分類並標示優先順序。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">授權代理存取 Email → 設定分類規則（重要/一般/電子報/垃圾）→ 代理自動處理所有新進郵件 → 重要郵件即時通知</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Email 分類</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">優先排序</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🎙️ 語音筆記轉任務</div>
+      <div class="card-en">Voice Notes to Tasks</div>
+      <div class="card-desc">將語音備忘錄自動轉錄、提取行動項目，並同步到任務管理工具中。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">錄製語音備忘（用完後上傳）→ 代理自動轉錄並識別其中的待辦事項 → 生成結構化任務清單 → 同步至 Todoist/Notion</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">語音轉錄</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">任務提取</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📄 PDF 文件處理中心</div>
+      <div class="card-en">PDF Ops Desk</div>
+      <div class="card-desc">自動化各種 PDF 操作：擷取文字、摘要、填寫表單、合併文件等。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">上傳 PDF 並描述需求 → 代理執行對應操作（摘要/擷取/填表/合併）→ 輸出處理後的文件或資訊 → 支援批次處理多份文件</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">PDF 處理</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">批次操作</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🗓️ 會議前情報準備</div>
+      <div class="card-en">Meeting Briefing Concierge</div>
+      <div class="card-desc">會議前自動研究與會者背景、公司現況與近期動態，讓你充分準備。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供會議日期與與會者名單 → 代理研究每位與會者的背景與近期活動 → 整理成簡報格式 → 會議前發送至你的信箱</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">會議準備</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">背景研究</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔄 行事曆衝突排解</div>
+      <div class="card-en">Calendar Conflict Resolver</div>
+      <div class="card-desc">自動偵測行事曆中的時間衝突，提出重排建議並協助與相關人員溝通。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接行事曆帳號 → 代理掃描並識別時間重疊 → 根據優先序建議重排方案 → 自動通知相關與會者更新時間</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">行事曆</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">衝突偵測</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📌 看板自動整理</div>
+      <div class="card-en">Trello / Notion Board Organizer</div>
+      <div class="card-desc">自動整理 Trello 或 Notion 看板，移動逾期卡片、封存完成項目並重新排列優先序。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 Trello/Notion 帳號 → 設定整理規則（逾期自動移動/完成自動封存）→ 代理定期掃描並執行整理 → 產出看板健康報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Trello</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Notion</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📦 包裹追蹤自動化</div>
+      <div class="card-en">Package Tracking Automation</div>
+      <div class="card-desc">自動查詢多個快遞平台的包裹狀態，有異動時立即通知，無需手動查詢。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供包裹追蹤號碼與快遞商 → 代理定期查詢各平台狀態 → 偵測到狀態變更立即通知 → 支援同時追蹤多個包裹</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">物流追蹤</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">即時通知</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🤖 異步站會機器人</div>
+      <div class="card-en">Team Standup Bot</div>
+      <div class="card-desc">取代每日站會，每天自動向團隊成員收集進度更新，彙整成摘要報告。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定每日詢問時間與問題（昨日完成/今日計畫/任何阻礙）→ 代理主動向每人詢問 → 收集回覆後彙整摘要 → 發送至團隊頻道</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">異步溝通</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">站會</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c4)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📆 會議時間自動協調</div>
+      <div class="card-en">Meeting Scheduler</div>
+      <div class="card-desc">自動找出所有與會者的空閒時段，安排最佳會議時間，並發送邀請。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供與會者名單與偏好時段 → 代理查詢各人行事曆找出共同空閒 → 自動選出最佳時間 → 發送會議邀請並更新行事曆</div>
+      <div class="tags"><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">日程協調</span><span class="tag" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">自動邀請</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 5：商業、行銷與銷售
+══════════════════════════════════════════ -->
+<div class="category" id="s5">
+  <div class="cat-header">
+    <span class="cat-icon">💼</span>
+    <h2>商業、行銷與銷售</h2>
+    <span class="cat-count">14 個案例</span>
+    <span class="cat-new">★ 全新分類</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🕵️ 競爭對手情報週報</div>
+      <div class="card-en">Competitor Briefing</div>
+      <div class="card-desc">自動追蹤競爭對手的產品更新、行銷活動與公開聲明，每週產出情報簡報。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定競品公司名單與監控來源 → 代理掃描官網、社群、新聞 → 彙整本週重要動態 → 每週寄送競品情報週報</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">競品分析</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">情報追蹤</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💰 競品定價即時追蹤</div>
+      <div class="card-en">Competitor Pricing Monitor</div>
+      <div class="card-desc">持續監控競爭對手的定價頁面，價格有異動時立即通知，幫助即時調整定價策略。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定競品定價頁面 URL → 代理定期抓取並比對價格 → 偵測到變動立即通知 → 附上歷史價格趨勢分析</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">定價監控</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">即時警報</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">😤 競品情緒分析</div>
+      <div class="card-en">Competitor Sentiment Analysis</div>
+      <div class="card-desc">分析用戶對競爭對手產品的評論與社群討論，找出競品弱點與市場機會。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定競品品牌名稱 → 代理掃描評論平台、Reddit、App Store 等 → 對評論進行情緒分類 → 產出競品弱點報告與機會洞察</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">情緒分析</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">市場機會</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔍 程式化 SEO</div>
+      <div class="card-en">Programmatic SEO</div>
+      <div class="card-desc">自動研究長尾關鍵字機會，批量生成 SEO 優化的頁面內容，規模化提升自然搜尋流量。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定目標市場與核心主題 → 代理挖掘長尾關鍵字機會 → 批量生成 SEO 優化內容草稿 → 審查後發布至網站</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">SEO</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">長尾關鍵字</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔗 HARO 外鏈建設</div>
+      <div class="card-en">HARO Outreach for Backlinks</div>
+      <div class="card-desc">監控 HARO（Help A Reporter Out）的媒體詢問，自動識別相關機會並起草回覆以獲取高質量外鏈。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">訂閱 HARO 郵件並授權代理讀取 → 代理識別與你專業相關的詢問 → 自動起草個人化媒體回覆草稿 → 審查後寄出</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">外鏈建設</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">媒體公關</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📊 潛在客戶資料豐富</div>
+      <div class="card-en">Lead Enrichment</div>
+      <div class="card-desc">自動從多個公開來源豐富潛在客戶資料，包含公司規模、職位、聯絡資訊與近期動態。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">匯入潛在客戶名單（姓名/公司）→ 代理從 LinkedIn、公司官網等來源自動蒐集資料 → 更新 CRM 中的完整資料 → 標記高優先度潛在客戶</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">Lead 豐富</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">CRM</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📬 冷外聯自動化</div>
+      <div class="card-en">Cold Outreach Automation</div>
+      <div class="card-desc">自動研究目標對象並生成高度個人化的冷外聯郵件，提升開信率與回覆率。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供目標名單與外聯目的 → 代理研究每個人的背景與近期活動 → 生成個人化外聯郵件草稿 → 審查後批次發送</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">冷外聯</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">個人化</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📉 廣告效益每日報告</div>
+      <div class="card-en">Daily Ad Spend &amp; ROAS Report</div>
+      <div class="card-desc">每日自動彙整各廣告平台的投放數據，產出花費、ROAS 與轉換分析報告。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 Meta、Google Ads 等廣告帳號 → 代理每日抓取投放數據 → 計算各廣告組 ROAS 並排序 → 以報告推送至 Slack 或 Email</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">廣告分析</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">ROAS</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📋 每週策略備忘錄</div>
+      <div class="card-en">Weekly Strategic Memo</div>
+      <div class="card-desc">每週自動彙整關鍵指標、市場動態與團隊進度，生成一份給決策者的策略備忘錄。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定需要追蹤的 KPI 與資料來源 → 代理每週自動蒐集整理數據 → 撰寫帶有洞察的策略備忘錄 → 自動發送給指定收件人</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">週報</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">策略分析</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💼 自由工作者案源開發</div>
+      <div class="card-en">Freelancer Lead Pipeline</div>
+      <div class="card-desc">自動掃描各平台（Upwork、LinkedIn、Twitter）的接案機會，篩選符合條件的案子並發送通知。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定技能、時薪範圍與偏好類型 → 代理掃描各接案平台 → 過濾符合條件的案件 → 整理後每日推送給你</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">接案</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">Upwork</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🌟 網紅發掘與外聯</div>
+      <div class="card-en">Creator Discovery &amp; Outreach</div>
+      <div class="card-desc">依照受眾、互動率與主題自動發掘符合品牌的 KOL/網紅，並生成個人化外聯訊息。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">描述目標受眾與合作需求 → 代理掃描社群平台找出符合條件的創作者 → 分析其受眾質量與互動率 → 生成個人化合作邀約</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">KOL</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">網紅行銷</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📞 銷售電話準備助手</div>
+      <div class="card-en">Sales Call Prep Bot</div>
+      <div class="card-desc">在銷售電話前，自動研究潛在客戶的公司狀況、痛點與近期動態，讓你做好充分準備。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">輸入潛在客戶公司名稱與聯絡人 → 代理研究公司規模、近期新聞與痛點 → 生成電話準備簡報 → 附上建議的開場話術與問題清單</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">銷售準備</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">客戶研究</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">⭐ 評論追蹤管理</div>
+      <div class="card-en">Review Tracking</div>
+      <div class="card-desc">跨平台監控產品評論（App Store、Google Play、G2 等），自動摘要情緒趨勢並提醒負評。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定監控的評論平台與產品 → 代理定期抓取新評論 → 分類並提取關鍵回饋 → 負評即時通知，週報彙整趨勢</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">評論監控</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">App Store</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c5)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🧪 廣告創意 A/B 測試</div>
+      <div class="card-en">A/B Test Creatives</div>
+      <div class="card-desc">自動生成多個廣告文案與視覺方向的 A/B 測試版本，並追蹤測試結果提出優化建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供廣告目標與產品資訊 → 代理生成多個測試版本（不同標題/CTA/角度）→ 追蹤各版本表現數據 → 自動分析並建議贏家版本</div>
+      <div class="tags"><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">A/B 測試</span><span class="tag" style="background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)">廣告優化</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 6：DevOps 與工程
+══════════════════════════════════════════ -->
+<div class="category" id="s6">
+  <div class="cat-header">
+    <span class="cat-icon">🔧</span>
+    <h2>DevOps 與工程</h2>
+    <span class="cat-count">10 個案例</span>
+    <span class="cat-new">+8 新增</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-title">⚙️ n8n 工作流程編排</div>
+      <div class="card-en">n8n Workflow Orchestration</div>
+      <div class="card-desc">透過 Webhook 將 API 呼叫委派給 n8n 工作流，代理永遠不接觸憑證，所有整合視覺化且可鎖定。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">在 n8n 建立工作流並設定 Webhook 觸發點 → 將 URL 配置給代理 → 代理需要呼叫 API 時觸發 n8n → 憑證安全保存在 n8n 中</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">n8n</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">憑證隔離</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-title">🏠 自我修復家庭伺服器</div>
+      <div class="card-en">Self-Healing Home Server</div>
+      <div class="card-desc">運行 24/7 常駐基礎設施代理，具備 SSH 存取、自動 cron 排程與自我修復能力。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">配置 SSH 存取權限給代理 → 設定監控規則（服務健康、磁碟空間）→ 代理定期巡檢並自動修復 → 重啟服務、清理日誌等操作全自動</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">SSH</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">自我修復</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔍 PR 追蹤雷達</div>
+      <div class="card-en">PR Radar</div>
+      <div class="card-desc">持續監控 GitHub PR 狀態，識別長時間未審查的 PR 並自動提醒相關審查者。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 GitHub 帳號 → 設定 PR 超時閾值（如 48 小時未審查）→ 代理定期掃描 PR 狀態 → 超時時自動 Ping 審查者</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">GitHub</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">PR 管理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🩺 CI 不穩定測試修復</div>
+      <div class="card-en">CI Flake Doctor</div>
+      <div class="card-desc">自動識別 CI 流水線中的不穩定測試（flaky tests），分析失敗原因並提出修復建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 CI 平台（GitHub Actions/CircleCI）→ 代理追蹤多次執行中不穩定的測試 → 分析失敗模式與可能原因 → 產出修復建議報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">CI/CD</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">Flaky Tests</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📜 文件漂移哨兵</div>
+      <div class="card-en">Docs Drift Sentinel</div>
+      <div class="card-desc">監控程式碼變更，偵測文件是否與程式碼脫節，自動提醒需要更新的文件。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定程式碼與文件目錄的對應關係 → 代理監控 Git commit 中的程式碼變更 → 識別對應文件是否同步更新 → 提醒開發者補齊文件</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">文件同步</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">Git</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📝 變更日誌自動化</div>
+      <div class="card-en">Changelog Automation</div>
+      <div class="card-desc">根據 Git commit 記錄自動生成格式化的 CHANGELOG，並在發版時自動更新。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">配置 commit 格式規範（Conventional Commits）→ 代理在每次發版時掃描 commit 記錄 → 自動分類（Feature/Fix/Breaking）→ 生成格式化 CHANGELOG.md</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">CHANGELOG</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">自動化發版</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔗 依賴套件審計</div>
+      <div class="card-en">Dependency Auditing</div>
+      <div class="card-desc">定期掃描專案依賴套件，識別過期版本、安全漏洞與重複依賴，並建議更新方案。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定專案 repo 路徑 → 代理定期掃描 package.json/requirements.txt → 識別有漏洞或過期的依賴 → 產出優先更新清單並開 PR</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">依賴管理</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">安全掃描</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔥 Sentry 事故回顧報告</div>
+      <div class="card-en">Sentry Incident Postmortem</div>
+      <div class="card-desc">當 Sentry 偵測到嚴重錯誤時，自動生成事故回顧報告，包含影響範圍、根本原因分析與預防措施。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">串接 Sentry webhook → 代理在重大錯誤觸發時自動啟動 → 分析錯誤堆疊與受影響用戶 → 生成 Postmortem 文件草稿</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">Sentry</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">Postmortem</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🚀 部署自動化流水線</div>
+      <div class="card-en">Deployment Pipeline</div>
+      <div class="card-desc">協調多環境部署流程，自動執行部署前檢查、通知相關人員並追蹤部署狀態。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定部署流程規則與環境 → 代理在部署前自動執行健康檢查 → 通知相關人員部署開始 → 監控部署進度並在完成或失敗時報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">部署自動化</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">多環境</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c6)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📖 程式碼自動文件化</div>
+      <div class="card-en">Code to Docs Generator</div>
+      <div class="card-desc">自動分析程式碼並生成對應的 API 文件、函數說明與使用範例。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">指向 repo 或特定程式碼目錄 → 代理解析函數、類別與介面 → 自動生成 JSDoc/docstring 格式的說明 → 輸出為 Markdown 或 HTML 文件</div>
+      <div class="tags"><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">文件生成</span><span class="tag" style="background:rgba(20,184,166,.12);color:#2dd4bf;border:1px solid rgba(20,184,166,.2)">API Docs</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 7：安全與合規
+══════════════════════════════════════════ -->
+<div class="category" id="s7">
+  <div class="cat-header">
+    <span class="cat-icon">🛡️</span>
+    <h2>安全與合規</h2>
+    <span class="cat-count">6 個案例</span>
+    <span class="cat-new">★ 全新分類</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c7)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔑 SSH 金鑰安全掃描</div>
+      <div class="card-en">SSH Key Scanner</div>
+      <div class="card-desc">自動掃描伺服器與程式碼庫中的 SSH 金鑰，識別過期、弱強度或未授權的金鑰。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定要掃描的伺服器與 repo → 代理掃描所有 SSH 金鑰 → 識別過期或強度不足的金鑰 → 產出安全報告並標示需撤銷的金鑰</div>
+      <div class="tags"><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">SSH</span><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">安全審計</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c7)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">☁️ AWS 憑證安全掃描</div>
+      <div class="card-en">AWS Credential Scanner</div>
+      <div class="card-desc">掃描程式碼庫與設定檔中意外洩露的 AWS 憑證，防止雲端安全事故。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定要掃描的 repo 與目錄 → 代理掃描所有檔案中的 AWS 關鍵字模式 → 識別潛在洩露的 Access Key/Secret → 立即告警並建議撤銷</div>
+      <div class="tags"><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">AWS</span><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">憑證洩露</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c7)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🧹 Git 歷史敏感資訊清理</div>
+      <div class="card-en">Git History Cleaner</div>
+      <div class="card-desc">掃描 Git 提交歷史，找出曾經洩露的密碼、API 金鑰等敏感資訊，並協助安全地重寫歷史。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">指向 Git repo → 代理掃描所有提交歷史中的敏感模式 → 找出含有秘密的 commit → 產出報告並提供 git-filter-repo 清理指令</div>
+      <div class="tags"><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">Git</span><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">歷史清理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c7)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔓 API 安全測試</div>
+      <div class="card-en">API Security Tester</div>
+      <div class="card-desc">自動對 API 端點進行基本安全測試，包含認證繞過、SQL 注入、速率限制等常見漏洞檢測。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供 API 文件或端點清單 → 代理自動執行常見安全測試用例 → 記錄所有異常回應 → 產出漏洞報告並按風險等級排序</div>
+      <div class="tags"><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">滲透測試</span><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">API 安全</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c7)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔎 漏洞自動掃描</div>
+      <div class="card-en">Vulnerability Scanner Automation</div>
+      <div class="card-desc">定期對系統和應用程式執行自動化漏洞掃描，並依嚴重程度優先排序修復建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定掃描目標（IP 範圍、域名、repo）→ 代理定期執行漏洞掃描 → 彙整 CVE 與發現的漏洞 → 依 CVSS 評分排序並提供修補建議</div>
+      <div class="tags"><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">漏洞掃描</span><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">CVE</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c7)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">⚖️ 法規合規性自動檢查</div>
+      <div class="card-en">Compliance Checker</div>
+      <div class="card-desc">自動對照 GDPR、SOC2、ISO 27001 等法規要求，識別系統與流程中的合規缺口。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">選擇目標合規框架（GDPR/SOC2 等）→ 代理根據控制清單掃描現有系統與政策 → 識別不合規項目 → 產出合規缺口報告與改善路線圖</div>
+      <div class="tags"><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">GDPR</span><span class="tag" style="background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)">合規審計</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 8：監控與維運
+══════════════════════════════════════════ -->
+<div class="category" id="s8">
+  <div class="cat-header">
+    <span class="cat-icon">🖥️</span>
+    <h2>監控與維運</h2>
+    <span class="cat-count">8 個案例</span>
+    <span class="cat-new">★ 全新分類</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">⏱️ SLA 守護者</div>
+      <div class="card-en">SLA Guardian</div>
+      <div class="card-desc">持續監控所有開放工單的 SLA 狀態，在即將超時前主動警報並自動升級處理。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接工單系統（Zendesk/Jira Service Desk）→ 設定各類工單的 SLA 時限 → 代理持續追蹤剩餘時間 → 剩餘 20% 時間時自動升級並通知</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">SLA</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">工單管理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🌐 網站可用性監控</div>
+      <div class="card-en">Website Uptime Monitor</div>
+      <div class="card-desc">每隔幾分鐘自動探測網站可用性，偵測到停機時立即多管道通知，並記錄可用率統計。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定要監控的 URL 清單與探測頻率 → 代理定期發送 HTTP 請求 → 偵測到異常回應或逾時立即通知 → 月底產出可用率報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">Uptime</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">即時告警</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔐 SSL 憑證到期監控</div>
+      <div class="card-en">SSL Certificate Monitor</div>
+      <div class="card-desc">追蹤所有域名的 SSL 憑證到期日，提前 30/14/7 天自動提醒，避免憑證意外過期。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定要監控的域名清單 → 代理定期查詢憑證到期日 → 提前 30 天開始分階段提醒 → 到期當天發出緊急警報</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">SSL/TLS</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">憑證管理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💾 資料庫自動備份</div>
+      <div class="card-en">Database Backup Automation</div>
+      <div class="card-desc">按照排程自動備份資料庫，驗證備份完整性，並在備份失敗時立即告警。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定資料庫連線與備份排程 → 代理定時執行備份並上傳至雲端儲存 → 驗證備份完整性（還原測試）→ 失敗時立即告警</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">備份</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">資料安全</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💸 AI 模型費用追蹤中心</div>
+      <div class="card-en">AI Model Cost Tracker</div>
+      <div class="card-desc">追蹤 OpenAI、Anthropic 等 AI API 的使用費用，超過預算時發出警報，並分析費用分布。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接各 AI API 帳單帳號 → 設定每日/月費用預算閾值 → 代理定期查詢用量並計算費用 → 超過閾值時立即通知並產出費用分析</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">AI 費用</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">預算控制</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📋 每週事故摘要</div>
+      <div class="card-en">Weekly Incident Brief</div>
+      <div class="card-desc">每週自動彙整所有系統事故，分析根本原因、影響時間與解決方案，產出管理層報告。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接事故追蹤系統（PagerDuty/OpsGenie）→ 代理每週彙整所有事故 → 分類分析並找出重複模式 → 產出含改善建議的週報</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">事故管理</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">PagerDuty</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🚦 API 速率限制監控</div>
+      <div class="card-en">API Rate Limit Monitor</div>
+      <div class="card-desc">追蹤所有外部 API 的速率限制使用情況，快接近限制時提前警報並建議優化策略。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定要監控的 API 清單與速率上限 → 代理追蹤各 API 的請求頻率 → 達到 80% 限制時發出警報 → 提供流量整型或快取的建議</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">速率限制</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">API 管理</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c8)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔔 智慧警報彙整去重</div>
+      <div class="card-en">Smart Alert Aggregator</div>
+      <div class="card-desc">將來自多個監控系統的警報智慧去重與關聯分析，避免警報疲勞，只推送真正重要的告警。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">整合所有監控工具的 webhook → 代理對收到的警報進行去重與關聯分析 → 識別根本原因警報 → 只推送高優先度、非重複的告警</div>
+      <div class="tags"><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">警報去重</span><span class="tag" style="background:rgba(249,115,22,.12);color:#fb923c;border:1px solid rgba(249,115,22,.2)">NOC</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 9：研究與學習
+══════════════════════════════════════════ -->
+<div class="category" id="s9">
+  <div class="cat-header">
+    <span class="cat-icon">🔬</span>
+    <h2>研究與學習</h2>
+    <span class="cat-count">9 個案例</span>
+    <span class="cat-new">+4 新增</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-title">📊 AI 財報追蹤器</div>
+      <div class="card-en">AI Earnings Tracker</div>
+      <div class="card-desc">追蹤科技與 AI 公司財報，提供自動預覽、即時警報與詳細摘要分析。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定關注的科技公司清單 → 代理監控財報發布日期 → 財報發布時即時產生摘要 → 透過通知推送關鍵數據與異常</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">財報分析</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">即時警報</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-title">📚 個人知識庫（RAG）</div>
+      <div class="card-en">Personal Knowledge Base (RAG)</div>
+      <div class="card-desc">將 URL、推文與文章丟進聊天室，建立可搜尋的個人知識庫，用自然語言提問即可取用。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">貼上任何 URL 或文章連結 → 代理自動擷取並進行向量化索引 → 建立可搜尋的 RAG 知識庫 → 之後用自然語言提問即可</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">RAG</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">向量搜尋</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-title">🔍 市場調研與 MVP 工廠</div>
+      <div class="card-en">Market Research &amp; Product Factory</div>
+      <div class="card-desc">從 Reddit 和 X 挖掘真實使用者痛點，然後讓代理自動建造解決問題的 MVP。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定感興趣的市場領域 → 代理掃描近 30 天討論識別高頻痛點 → 針對痛點產出 MVP 規格 → 代理進一步自動建造基礎原型</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">痛點挖掘</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">MVP</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-title">🛡️ 建造前點子驗證器</div>
+      <div class="card-en">Pre-Build Idea Validator</div>
+      <div class="card-desc">建造前自動掃描 GitHub、HN、npm、PyPI 和 Product Hunt — 市場擁擠就停止，空白就前進。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">描述你的產品點子 → 代理在各平台搜尋類似項目 → 分析競爭態勢與差異化空間 → 產出「前進」或「重新構思」的驗證報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">點子驗證</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">競品分析</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-title">🔎 語義記憶搜尋</div>
+      <div class="card-en">Semantic Memory Search</div>
+      <div class="card-desc">為 OpenClaw markdown 記憶檔案添加向量驅動的語義搜尋，支援混合檢索與自動同步。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接記憶檔案與向量資料庫 → 代理自動向量化索引並保持同步 → 搜尋時同時使用關鍵字與語義匹配 → 即使用詞不同也能找到相關記憶</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">向量搜尋</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">混合檢索</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🎬 YouTube 研究分析桌</div>
+      <div class="card-en">YouTube Research Desk</div>
+      <div class="card-desc">自動下載 YouTube 影片逐字稿，提取重點知識並彙整成結構化研究筆記。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">提供 YouTube 影片或頻道 URL → 代理自動擷取字幕或逐字稿 → 提取核心觀點與重要引用 → 輸出結構化研究筆記</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">YouTube</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">研究筆記</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📰 每週研究情報摘要</div>
+      <div class="card-en">Weekly Research Digest</div>
+      <div class="card-desc">每週自動蒐集指定領域的最新論文、部落格與研究報告，彙整成易讀的情報摘要。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定關注的研究領域與來源 → 代理每週掃描 ArXiv、技術部落格、學術期刊 → 篩選最重要的研究成果 → 每週發送精選研究摘要</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">研究追蹤</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">ArXiv</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💡 內容靈感挖掘機</div>
+      <div class="card-en">Content Idea Miner</div>
+      <div class="card-desc">從多個平台挖掘熱門討論話題與常見問題，自動轉換為有潛力的內容創作靈感。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定目標受眾與內容主題 → 代理掃描 Reddit、Quora、社群平台的熱門問題 → 識別高潛力話題 → 產出附有角度建議的靈感清單</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">靈感挖掘</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">話題研究</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c9)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📄 產品需求文件起草</div>
+      <div class="card-en">PRD Drafting Assistant</div>
+      <div class="card-desc">根據功能描述自動起草產品需求文件（PRD），包含用戶故事、驗收條件與技術考量。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">描述新功能的目標與背景 → 代理自動生成標準 PRD 結構 → 填入用戶故事與驗收標準 → 產出可直接使用的 PRD 草稿</div>
+      <div class="tags"><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">PRD</span><span class="tag" style="background:rgba(6,182,212,.12);color:#22d3ee;border:1px solid rgba(6,182,212,.2)">產品管理</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 10：金融與交易
+══════════════════════════════════════════ -->
+<div class="category" id="s10">
+  <div class="cat-header">
+    <span class="cat-icon">💰</span>
+    <h2>金融與交易</h2>
+    <span class="cat-count">6 個案例</span>
+    <span class="cat-new">+5 新增</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c10)"></div>
+      <div class="card-title">📉 Polymarket 自動交易</div>
+      <div class="card-en">Polymarket Autopilot</div>
+      <div class="card-desc">在預測市場進行自動化模擬交易，具備回測、策略分析與每日績效報告功能。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定交易策略參數與風險偏好 → 代理在 Polymarket 執行模擬交易 → 自動回測驗證歷史表現 → 每日產出盈虧與策略優化建議</div>
+      <div class="tags"><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">預測市場</span><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">回測</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c10)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🏦 投資案流程管理</div>
+      <div class="card-en">Investor Deal Flow</div>
+      <div class="card-desc">自動處理與追蹤入站投資機會，從初步篩選到盡職調查，系統化管理整個投資流程。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定投資標準與評估條件 → 代理自動分類與評分新進案件 → 追蹤各案件在漏斗中的進度 → 定期彙整案件管道報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">創投</span><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">Deal Flow</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c10)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📈 投資組合監控</div>
+      <div class="card-en">Portfolio Monitoring</div>
+      <div class="card-desc">自動追蹤投資組合中各公司的關鍵指標，偵測到重大變化時主動通知。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定投資組合公司名單與追蹤指標 → 代理定期抓取財務數據與新聞 → 識別重大異常（財務惡化/重大新聞）→ 主動發送投資組合健康報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">投資組合</span><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">財務監控</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c10)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🔍 訂閱費用審計</div>
+      <div class="card-en">Spend &amp; Subscription Audit</div>
+      <div class="card-desc">掃描信用卡帳單與訂閱記錄，識別忘記的訂閱、重複收費與可以降級的服務。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接信用卡或銀行帳號 → 代理掃描所有週期性費用 → 識別未使用或重複的訂閱 → 產出節省建議清單並計算潛在節省金額</div>
+      <div class="tags"><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">訂閱管理</span><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">費用優化</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c10)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🧾 發票處理自動化</div>
+      <div class="card-en">Invoice Processing</div>
+      <div class="card-desc">自動擷取發票中的關鍵欄位（金額、日期、廠商），整合至會計系統並追蹤付款狀態。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">發票寄送至指定信箱或上傳 → 代理 OCR 識別關鍵欄位 → 自動分類並同步至會計軟體 → 追蹤逾期未付發票</div>
+      <div class="tags"><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">發票處理</span><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">會計自動化</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c10)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💳 個人財務追蹤</div>
+      <div class="card-en">Personal Finance Tracker</div>
+      <div class="card-desc">自動彙整多個帳戶的收支記錄，分類分析消費習慣，並提供預算管控建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接銀行與信用卡帳號 → 代理自動抓取並分類所有交易 → 與預算目標比對 → 每月產出財務健康報告與節流建議</div>
+      <div class="tags"><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">個人理財</span><span class="tag" style="background:rgba(132,204,22,.12);color:#a3e635;border:1px solid rgba(132,204,22,.2)">預算管控</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 11：健康與個人成長
+══════════════════════════════════════════ -->
+<div class="category" id="s11">
+  <div class="cat-header">
+    <span class="cat-icon">🏥</span>
+    <h2>健康與個人成長</h2>
+    <span class="cat-count">6 個案例</span>
+    <span class="cat-new">★ 全新分類</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c11)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">😴 睡眠品質優化</div>
+      <div class="card-en">Sleep Optimizer</div>
+      <div class="card-desc">追蹤睡眠模式與日間活動的關聯，識別影響睡眠品質的因素，提供個人化改善建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接穿戴裝置或手動記錄睡眠時間 → 代理分析睡眠與日間習慣的關聯 → 識別影響睡眠的觸發因素 → 每週提供個人化改善計畫</div>
+      <div class="tags"><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">睡眠追蹤</span><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">健康分析</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c11)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🧘 心理健康定期打卡</div>
+      <div class="card-en">Mental Health Check-in</div>
+      <div class="card-desc">每天以溫和方式詢問你的情緒狀態，追蹤心情趨勢，在需要時提供支持與資源建議。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定每日打卡時間 → 代理以友善方式詢問今日情緒狀態 → 記錄並分析心情趨勢 → 情緒低落時提供對應的支持資源</div>
+      <div class="tags"><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">心理健康</span><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">情緒追蹤</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c11)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">💪 健身打卡問責系統</div>
+      <div class="card-en">Workout Accountability</div>
+      <div class="card-desc">追蹤健身計畫執行情況，在你跳過訓練時主動詢問，以溫柔但堅定的方式維持問責。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定每週訓練計畫與目標 → 代理在訓練時間前後主動確認 → 記錄完成情況與訓練數據 → 每週產出進度報告並調整計畫</div>
+      <div class="tags"><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">健身</span><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">問責系統</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c11)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🗺️ 個人學習路徑規劃</div>
+      <div class="card-en">Learning Path Creator</div>
+      <div class="card-desc">根據你的目標、現有程度與可用時間，規劃最適合的個人化學習路徑並持續追蹤進度。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">描述想學的技能與目標（如「三個月學會 Python」）→ 代理評估現有程度並規劃課程路徑 → 按進度推送每日學習任務 → 定期評估並調整計畫</div>
+      <div class="tags"><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">學習規劃</span><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">個人化課程</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c11)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🏃 健身數據彙整分析</div>
+      <div class="card-en">Health &amp; Fitness Data Logger</div>
+      <div class="card-desc">彙整來自多個健身 App 和穿戴裝置的數據，產出統一的健身進度報告與趨勢分析。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">連接 Apple Health、Garmin、Strava 等平台 → 代理定期同步各平台數據 → 統一彙整並分析趨勢 → 每週產出綜合健身報告</div>
+      <div class="tags"><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">多平台整合</span><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">健身數據</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c11)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🥗 採購與營養優化</div>
+      <div class="card-en">Grocery &amp; Nutrition Optimizer</div>
+      <div class="card-desc">根據營養目標與週間菜單，自動生成購物清單，避免衝動購買並確保飲食均衡。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定每週菜單計畫與營養目標 → 代理計算所需食材並生成購物清單 → 依照目標優化食材選擇（控糖/高蛋白等）→ 同步至購物 App</div>
+      <div class="tags"><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">營養管理</span><span class="tag" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)">購物清單</span></div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════════
+     CATEGORY 12：AI 記憶與代理架構
+══════════════════════════════════════════ -->
+<div class="category" id="s12">
+  <div class="cat-header">
+    <span class="cat-icon">🧠</span>
+    <h2>AI 記憶與代理架構</h2>
+    <span class="cat-count">5 個案例</span>
+    <span class="cat-new">★ 全新分類</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="accent" style="background:var(--c12)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🗂️ 三層記憶架構系統</div>
+      <div class="card-en">Three-Tier Memory System</div>
+      <div class="card-desc">為 AI 代理建立工作記憶、短期記憶與長期記憶的三層架構，讓代理在複雜任務中保持上下文連貫。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設計三層記憶結構（工作/短期/長期）→ 配置各層的儲存策略與淘汰規則 → 代理根據任務類型自動調用適當記憶層 → 定期將重要短期記憶升格為長期記憶</div>
+      <div class="tags"><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">代理記憶</span><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">架構設計</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c12)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🕸️ 知識圖譜重建</div>
+      <div class="card-en">Knowledge Graph Rebuilder</div>
+      <div class="card-desc">自動掃描代理的記憶檔案與筆記，重建實體間的關聯關係，生成可視化知識圖譜。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">指向記憶或筆記目錄 → 代理提取實體（人物、概念、事件）→ 識別並建立實體間的關聯 → 輸出知識圖譜視覺化與可查詢的圖資料庫</div>
+      <div class="tags"><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">知識圖譜</span><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">關聯分析</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c12)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📦 每週記憶封存</div>
+      <div class="card-en">Weekly Memory Archive</div>
+      <div class="card-desc">每週自動將代理的短期記憶整理、壓縮並封存，保持記憶系統的高效運作而不膨脹。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定每週封存排程 → 代理掃描本週新增的記憶 → 識別重複與低價值記憶並清除 → 重要記憶壓縮摘要後封存至長期儲存</div>
+      <div class="tags"><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">記憶管理</span><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">週期封存</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c12)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">🌱 每日自我提升 Cron</div>
+      <div class="card-en">Daily Self-Improvement Cron</div>
+      <div class="card-desc">每天定時執行，根據個人目標與近期進展，自動生成當日個人成長建議與微任務。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定個人成長目標與追蹤指標 → 代理每天早上分析昨日進展 → 根據目標差距生成今日成長微任務 → 以通知方式推送每日成長計畫</div>
+      <div class="tags"><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">Cron</span><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">個人成長</span></div>
+    </div>
+
+    <div class="card">
+      <div class="accent" style="background:var(--c12)"></div>
+      <div class="card-new-badge">★ 新增</div>
+      <div class="card-title">📊 夜間自動化回報追蹤</div>
+      <div class="card-en">Night Work ROI Tracker</div>
+      <div class="card-desc">在代理夜間運行後，自動彙整所有夜間任務的完成情況與產出價值，計算自動化 ROI。</div>
+      <div class="card-how">使用方式</div>
+      <div class="card-steps">設定夜間自動化任務清單 → 代理在任務執行後記錄結果與耗時 → 早上彙整所有夜間產出 → 計算自動化節省的時間與估算 ROI</div>
+      <div class="tags"><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">ROI 追蹤</span><span class="tag" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)">夜間自動化</span></div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<footer>
+  <p>融合自 7 個社群 GitHub Repo · 授權：MIT · 產生日期：2026-03-01<br>
+  原始來源：<a href="https://github.com/hesamsheikh/awesome-openclaw-usecases" target="_blank">hesamsheikh/awesome-openclaw-usecases</a> 及其他社群貢獻</p>
+</footer>
+</body>
+</html>
